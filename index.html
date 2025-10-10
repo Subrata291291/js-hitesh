@@ -1089,7 +1089,7 @@
 
         //Reduce Method
 
-        const customPrices = [1,2,3,4,5,6,7,8,9,10]
+        // const customPrices = [1,2,3,4,5,6,7,8,9,10]
         // const finalprices = customPrices.reduce(function (accumulator, currentvalue) {
         //     console.log(`accumulator is ${accumulator} and currentvalue is ${currentvalue}`);
             
@@ -1121,6 +1121,69 @@
      </script>
      <!--Filter map and reduce-->
 
-     
+     <!--How to create a new element in DOM-->
+     <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+     </div>
+
+     <script>
+        const parent = document.querySelector('.parent')
+        // console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[1]);
+        // console.log(parent.children[1].innerHTML);
+
+        // for (let index = 0; index < parent.children.length; index++) {
+        //     console.log(parent.children[index].innerHTML);
+        // }
+        // parent.children[1].style.color = "red"
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+
+        const newDiv = document.createElement("div") //to create a div 
+        console.log(newDiv);
+
+        newDiv.className = "mydiv" // to set a class name
+        newDiv.id = "newdiv" // to set a id name
+        newDiv.id = Math.round (Math.random()*10) //random dynamic id's generate
+        newDiv.setAttribute("title", "my-title")// attribute set
+        newDiv.style.backgroundColor = 'red'
+        newDiv.style.padding = "10px"
+        newDiv.innerText = "hello world"
+
+        document.body.appendChild(newDiv) // to add this to the body
+     </script>
+     <!--How to create a new element in DOM-->
+
+     <!--Edit and remove elements in DOM-->
+     <ul class="language">
+        <li>javascript</li>
+     </ul>
+     <script>
+        function addLang(langName) {
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)
+        }
+        addLang("python")
+
+        //Edit
+        const secondlang = document.querySelector('li:nth-child(1)')
+        //secondlang.innerHTML= "mojo"// normal way
+        const newLi = document.createElement("li")
+        newLi.textContent = "Tailwind"
+        secondlang.replaceWith(newLi)// replace with method
+
+        const firstLang = document.querySelector("li:first-child")
+        firstLang.outerHTML= "<li>Mongo DB</li>" //outer HTML method
+
+        //remove
+        const removeLang = document.querySelector("li:last-child")
+        removeLang.remove()
+     </script>
+    <!--Edit and remove elements in DOM-->
 </body>
 </html>
