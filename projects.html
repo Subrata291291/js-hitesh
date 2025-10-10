@@ -6,6 +6,35 @@
     <title>Projects</title>
 </head>
 <body>
-    
+    <section class="buttons" style="position: fixed; right: 2rem; top: 50%; transform: translate(0%,-50%); display: flex; flex-direction: column;">
+        <button class="button" id="grey" style="background-color: grey; padding: 1.5rem 2rem; cursor: pointer;"></button>
+        <button class="button" id="red" style="background-color: red; padding: 1.5rem 2rem; cursor: pointer;"></button>
+        <button class="button" id="yellow" style="background-color: yellow; padding: 1.5rem 2rem; cursor: pointer;"></button>
+        <button class="button" id="black" style="background-color: black; padding: 1.5rem 2rem; cursor: pointer;"></button>
+        <button class="button" id="white" style="background-color: white; padding: 1.5rem 2rem; cursor: pointer;"></button>
+    </section>
 </body>
+<script>
+    const buttons = document.querySelectorAll("button")
+    const body = document.querySelector("body")
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click' ,function(e) {
+            //console.log(e.target);
+            if (e.target.id === 'grey') {
+                body.style.backgroundColor = e.target.id
+            } else if (e.target.id === 'red') {
+                body.style.backgroundColor = e.target.id
+            } else if (e.target.id === 'yellow') {
+                body.style.backgroundColor = e.target.id
+            } else if (e.target.id === 'black') {
+                body.style.backgroundColor = e.target.id
+            } else if (e.target.id === 'white') {
+                body.style.backgroundColor = e.target.id
+            } else (
+                body.style.backgroundColor = "white"
+            )
+        })
+    })
+</script>
 </html>
