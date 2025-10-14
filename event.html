@@ -47,11 +47,11 @@
             
         },false)
 
-        document.getElementById("nature").addEventListener('click', function(e) {
-            //alert("Nature Clicked")
-            console.log('clicked nature');
-            e.stopPropagation()
-        },false)
+        // document.getElementById("nature").addEventListener('click', function(e) {
+        //     //alert("Nature Clicked")
+        //     console.log('clicked nature');
+        //     e.stopPropagation()
+        // },false)
 
         //preventdefault method to stop redirecting
         document.getElementById("google").addEventListener('click', function(e){
@@ -60,6 +60,24 @@
             console.log('google clicked');
             
         },false)
+
+        //remove on click
+        // document.getElementById("myImages").addEventListener('click', function(e) {
+        //     // console.log(e.target.parentNode);
+        //     let removeItem = e.target.parentNode
+        //     removeItem.remove()
+        //     //removeItem.parentNode.removeChild(removeItem)
+        // },false)
+
+        //remove on click using tagName
+        document.getElementById("myImages").addEventListener('click', function(e) {
+            console.log(e.target.tagName);
+            console.log(e.target.id);
+            if(e.target.tagName === 'IMG'){
+                let removeItem = e.target.parentNode
+                removeItem.remove()
+            }
+        })
     </script>
 </body>
 </html>
