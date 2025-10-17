@@ -127,7 +127,7 @@
         let message = "";
         if (lovePercent > 80) message = "💖 Made for each other!";
         else if (lovePercent > 50) message = "💕 Good compatibility!";
-        else message = "💔 Needs some work!";
+        else message = "💔 Bad Choice!";
 
         resultDiv.innerHTML = `${name1} ❤️ ${name2} = <strong>${lovePercent}%</strong><br>${message}`;
       }, 5000);
