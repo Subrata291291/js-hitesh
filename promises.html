@@ -6,6 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- A Promise can be in one of three states: -->
+
+    <!-- Pending	The operation is still running
+    Fulfilled (Resolved)	The operation finished successfully
+    Rejected	The operation failed -->
+
+    <!-- 🧠 Example 1: Creating a Promise
+    let myPromise = new Promise((resolve, reject) => {
+    let success = true;
+
+    if (success) {
+        resolve("✅ Task completed successfully!");
+    } else {
+        reject("❌ Something went wrong!");
+    }
+    }); -->
+
+
+    <!-- Now, you use the promise like this:
+
+    myPromise
+    .then(result => console.log(result))  // Runs when resolved
+    .catch(error => console.error(error)) // Runs when rejected
+    .finally(() => console.log("Promise finished")); // Always runs -->
+
+
+    <!-- 🧾 Output (if success = true):
+
+    ✅ Task completed successfully!
+    Promise finished -->
 </body>
 </html>
