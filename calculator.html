@@ -125,11 +125,11 @@
         const lovePercent = (score % 100) + 1;
 
         let message = "";
-        if (lovePercent > 80) message = "💖 Made for each other!";
-        else if (lovePercent > 50) message = "💕 Good compatibility!";
-        else message = "💔 Bad Choice!";
+        if (lovePercent > 80) message = "Made for each other!";
+        else if (lovePercent > 50) message = "Good compatibility!";
+        else message = "Bad Choice!";
 
-        resultDiv.innerHTML = `${name1} ❤️ ${name2} = <strong>${lovePercent}%</strong><br>${message}`;
+        resultDiv.innerHTML = `${name1} ${name2} = <strong>${lovePercent}%</strong><br>${message}`;
       }, 5000);
     });
   </script>
