@@ -6,14 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        const multiply = (a) => (b) => a * b;
+    <input type="text" id="search" placeholder="Type here..." />
 
-        const double = multiply(2);
-        const triple = multiply(3);
+<script>
+const debounce = (func, delay) => {
+  let timeout;
 
-        console.log(double(5)); // 10
-        console.log(triple(5)); // 15
-    </script>
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), delay);
+  };
+};
+
+const search = debounce((value) => {
+  console.log("Final Search:", value);
+}, 1000);
+
+document.getElementById("search").addEventListener("input", (e) => {
+  search(e.target.value);
+});
+</script>
 </body>
 </html>

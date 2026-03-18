@@ -1237,6 +1237,48 @@
     <!--Debouncing-->
     <script>
         //Debouncing = “Wait until user stops doing something, then run code once”
+        //Suppose You type-
+        //S → Su → Sub → Subr → Subra → Subrata
+        //API Called 6 times
+        // But with debouncing Only ONE API call (after user stops typing)
+
+        //User keeps typing → timer resets
+        //User stops → timer finishes → function runs
+        //Visual Flow-
+        //Typing...
+        // ↓
+        // clear previous timer
+        // ↓
+        // start new timer
+        // ↓
+        // (wait...)
+        // ↓
+        // execute function
+
+        function debounce(func, delay) {
+            let timeout;//Stores timer ID
+
+            return function (...args) {
+
+                // Step 1: cancel previous timer
+                clearTimeout(timeout);//Cancels previous call
+
+                // Step 2: start new timer
+                timeout = setTimeout(() => {//Starts new timer
+                func(...args);
+                }, delay);
+            };
+        }
+        // Shorter version
+        const debounce = (func, delay) => {
+            let timeout;
+
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), delay);
+            };
+        };
+        //Debounce works because of closure
     </script>
 
 </body>
