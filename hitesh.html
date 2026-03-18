@@ -1200,5 +1200,44 @@
         })
     </script>
     <!--DOM Basics-->
+
+    <!--Currying-->
+    <script>
+        //What is Currying? Currying = breaking a function with multiple arguments into multiple functions with one argument each
+        // In shotform Currying = One argument at a time
+        // Normal Function
+        function add (a , b) {
+            return a + b;
+        }
+        console.log(add(2.3)); // takes 2 arguments at once
+
+        // Curried Function
+        function count (b) {
+            return function (c) {
+                return b + c
+            }
+        }
+        console.log(count(3)(5)); // First function takes a and second function takes b
+
+        //Arrow Function Version (Modern)
+        const add = (a) => (b) => a + b;
+        console.log(add(2)(3)); // 5      
+        
+        //Why Currying? only for Reusability. One function → multiple uses
+        const multiply = (a) => (b) => a * b;
+
+        const double = multiply(2);
+        const triple = multiply(3);
+
+        console.log(double(5)); // 10
+        console.log(triple(5)); // 15
+    </script>
+    <!--Currying-->
+
+    <!--Debouncing-->
+    <script>
+        //Debouncing = “Wait until user stops doing something, then run code once”
+    </script>
+
 </body>
 </html>
