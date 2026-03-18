@@ -17,10 +17,10 @@
         console.log(userName,userEmail,userAddress);
         console.table([userName,userEmail,userAddress]);
 
-        var userName = "nandita" // we can reasign the same name using var
+        var userName = "nandita" // we can reasign the same name uing var
         console.log(userName)
 
-        //let userEmail = "test1@gmail.com"; // we can't reasign the same name using let
+        //let userEmail = "test1@gmail.com"; // we can't reasign the same name uing let
         console.log(userEmail);
 
         //This is a scope where we have used let and reassign the value
@@ -46,7 +46,7 @@
     </script>
     <!--Data Types-->
 
-    <!--Data Types conversion-->
+    <!--Data Types converion-->
     <script>
         //Number Conversion
         let score = "33ssh"; // it is also a number
@@ -192,10 +192,10 @@
         console.log(newRepoName.indexOf('u'));
         console.log(newRepoName.length);
 
-        let updateNewRepoName = newRepoName.substring(0, 5) //Substring method substring() does NOT support negative values
+        let updateNewRepoName = newRepoName.substring(0, 5) //Substring method
         console.log(updateNewRepoName);
 
-        let anotherUpdateNewRepoName = newRepoName.slice(0,4) //Slice Method slice() supports negative values
+        let anotherUpdateNewRepoName = newRepoName.slice(0,4) //Slice Method
         console.log(anotherUpdateNewRepoName);
 
         let anotherUpdateNewRepoName1 = "   subrata   " // trim method
@@ -560,7 +560,7 @@
     </script>
     <!-- Functions with objects and array -->
 
-    <!-- Global and local scope -->
+     <!-- Global and local scope -->
     <script>
     // This is called global scope
     var a = 10
@@ -836,7 +836,7 @@
       <script>
         //condition ? true : false
         const productPrice = 999
-        productPrice <= 700 ? console.log("less than 700") : console.log("More than 700");
+        productPrice <= 700 ? console.log("less than 700") : console.log("More than 700"); //condition ? true_value : false_value
       </script>
      <!-- Terniary Operator-->
 
@@ -1089,7 +1089,7 @@
 
         //Reduce Method
 
-        // const customPrices = [1,2,3,4,5,6,7,8,9,10]
+        const customPrices = [1,2,3,4,5,6,7,8,9,10]
         // const finalprices = customPrices.reduce(function (accumulator, currentvalue) {
         //     console.log(`accumulator is ${accumulator} and currentvalue is ${currentvalue}`);
             
@@ -1100,90 +1100,105 @@
         // const finalprices = customPrices.reduce ( (accumulator, currentvalue) => accumulator + currentvalue ,0)
         // console.log(finalprices);
         
-        // const shoppingCart = [
-        //     {
-        //         itemName: "javascript Course",
-        //         price: 999
-        //     },
-        //     {
-        //         itemName: "Python Course",
-        //         price: 1999
-        //     },
-        //     {
-        //         itemName: "Figma Course",
-        //         price: 1299
-        //     },
-        // ]
-        // const finalprice = shoppingCart.reduce( (accum, item)=>  accum + item.price , 0 )
+        const shoppingCart = [
+            {
+                itemName: "javascript Course",
+                price: 999
+            },
+            {
+                itemName: "Python Course",
+                price: 1999
+            },
+            {
+                itemName: "Figma Course",
+                price: 1299
+            },
+        ]
+        const finalprice = shoppingCart.reduce( (accum, item)=>  accum + item.price , 0 )
 
-        // console.log(finalprice);
+        console.log(finalprice);
         
      </script>
-     <!--Filter map and reduce-->
+      <!--Filter map and reduce-->
 
-     <!--How to create a new element in DOM-->
-     <div class="parent">
-        <div class="day">Monday</div>
-        <div class="day">Tuesday</div>
-        <div class="day">Wednesday</div>
-        <div class="day">Thursday</div>
-     </div>
+     <!--Synchronous vs Asynchronous-->
+      <script>
+        //Synchronous vs Asynchronous
 
-     <script>
-        const parent = document.querySelector('.parent')
-        // console.log(parent);
-        // console.log(parent.children);
-        // console.log(parent.children[1]);
-        // console.log(parent.children[1].innerHTML);
+        //Synchronous (Normal JS)
+        console.log("Start")
+        console.log("Middle")
+        console.log("End")
 
-        // for (let index = 0; index < parent.children.length; index++) {
-        //     console.log(parent.children[index].innerHTML);
-        // }
-        // parent.children[1].style.color = "red"
-        // console.log(parent.firstElementChild);
-        // console.log(parent.lastElementChild);
+        //Asynchronous
+        console.log("start");
+        setTimeout(()=> {
+            console.log("Middle")
+        }, 1000)
+        console.log("End")    
+      </script>
+     <!--Synchronous vs Asynchronous-->
 
-        const newDiv = document.createElement("div") //to create a div 
-        console.log(newDiv);
+     <!--Promise-->
+    <script>
+        //What is Promise?
+        //Promise = future result
+        const promise = new Promise((resolve,reject) => { //resolve(Term) = success and reject(Term) = error
+            let success = true;
+            if(success) {
+                resolve("Task Completed")
+            } else {
+                reject("Error")
+            }
+        });
+        promise
+        .then((res) => console.log(res))//then = success handler
+        .catch((err) => console.log(err))//err = error handler
+    </script>
+    <!--Promise-->
 
-        newDiv.className = "mydiv" // to set a class name
-        newDiv.id = "newdiv" // to set a id name
-        newDiv.id = Math.round (Math.random()*10) //random dynamic id's generate
-        newDiv.setAttribute("title", "my-title")// attribute set
-        newDiv.style.backgroundColor = 'red'
-        newDiv.style.padding = "10px"
-        newDiv.innerText = "hello world"
+    <!--fetch API-->
+    <script>
+        //fetch API
+        fetch("")
+        .then((res) => res.json()) //res is use to response the server
+        .then((data) => console.log(data)) // then show the data
+        .catch((err) => console.log(err)) // show the error
+    </script>
+    <!--fetch API-->
 
-        document.body.appendChild(newDiv) // to add this to the body
-     </script>
-     <!--How to create a new element in DOM-->
-
-     <!--Edit and remove elements in DOM-->
-     <ul class="language">
-        <li>javascript</li>
-     </ul>
-     <script>
-        function addLang(langName) {
-            const li = document.createElement('li')
-            li.appendChild(document.createTextNode(langName))
-            document.querySelector('.language').appendChild(li)
+    <!--async / await-->
+    <script>
+        //async / await
+        async function getUsers() { //async → function কে async বানায়
+            try {
+                const res = await fetch("await → wait until result"); //await → wait until result comes
+                const data = await res.json();
+                console.log(data);
+            } catch (err) {
+                console.log(err)
+            }
         }
-        addLang("python")
+        getUsers();
 
-        //Edit
-        const secondlang = document.querySelector('li:nth-child(1)')
-        //secondlang.innerHTML= "mojo"// normal way
-        const newLi = document.createElement("li")
-        newLi.textContent = "Tailwind"
-        secondlang.replaceWith(newLi)// replace with method
-
-        const firstLang = document.querySelector("li:first-child")
-        firstLang.outerHTML= "<li>Mongo DB</li>" //outer HTML method
-
-        //remove
-        const removeLang = document.querySelector("li:last-child")
-        removeLang.remove()
-     </script>
-    <!--Edit and remove elements in DOM-->
+        //Why async is IMPORTANT for React?
+        //React uses:
+        //1.API calls 2.form submit 3.Data loading
+        //Without async → React impossible
+    </script>
+    <!--async / await-->
+    
+    <!--DOM Basics-->
+    <script>
+        //DOM Basics
+        document.querySelector("button").addEventListener("click", () => {
+            console.log("Button clicked");
+        });
+        // input value
+        document.querySelector("input").addEventListener("input", (e) => {
+            console.log((e.target.value))
+        })
+    </script>
+    <!--DOM Basics-->
 </body>
 </html>
